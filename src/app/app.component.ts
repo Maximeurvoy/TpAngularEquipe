@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Equipe } from './Models/Equipe';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'equipe';
+
+  equipes : Equipe[]=[]
+  nomEquipe : string =""
+
+  onAddEquipe(){
+    let equipeToAdd = new Equipe(this.nomEquipe)
+    this.equipes.push(equipeToAdd)
+    this.nomEquipe = ''
+  }
 }

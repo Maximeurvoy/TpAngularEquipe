@@ -25,7 +25,7 @@
               <tr *ngIf="equipes.length > 0">
                 <td colspan="3 mb-3">
                   <app-equipe
-                    [name]="item.name"
+                    [equipe]="item"
                     [index]="i"
                     *ngFor="let item of equipes; index as i"
                   >
@@ -33,11 +33,7 @@
                 </td>
               </tr>
 
-              <tr>
-                <th>Prénom</th>
-                <th>Nom</th>
-                <th>Action</th>
-              </tr>
+
 
               <tr>
                 <td>personne.prenom</td>
@@ -59,18 +55,19 @@
               class="form-control"
               aria-label="Prénom"
               placeholder="Prénom"
+              [(ngModel)]="prenomMembre"
             />
           </div>
           <div class="mb-3">
-            <input class="form-control" aria-label="prenom" placeholder="Nom" />
+            <input class="form-control" aria-label="prenom" placeholder="Nom"  [(ngModel)]="nomMembre"/>
           </div>
           <div class="mb-3">
-            <select aria-label="Equipe" class="form-select">
+            <select aria-label="Equipe" class="form-select" [(ngModel)]="equipeMembreIndex" >
               <option value="-1">Pas d'équipe</option>
-              <option>equipe.nom</option>
+              <option *ngFor="let item of equipes;index as i" [ngValue]="i">{{item.name}}</option>
             </select>
           </div>
-          <button class="btn btn-success btn-lg col-12">
+          <button class="btn btn-success btn-lg col-12" (click)="onAddMembre()">
             <i class="fa fa-plus"></i>
           </button>
         </div>

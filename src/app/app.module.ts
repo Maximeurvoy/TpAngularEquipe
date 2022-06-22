@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { EquipeComponent } from './equipe/equipe.component';
+import { Equipeservice } from './services/Equipeservice';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,7 @@ import { EquipeComponent } from './equipe/equipe.component';
     BrowserModule,
     FormsModule
   ],
-  providers: [],
+  providers: [Equipeservice],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

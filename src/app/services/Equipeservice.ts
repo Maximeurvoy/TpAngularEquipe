@@ -7,7 +7,6 @@ equipes:Equipe[]= [];
 
   delete(i:number):void{
     this.equipes.splice(i,1)
-    console.log("here")
   }
 
   onAddEquipe(nom:string){
@@ -16,8 +15,6 @@ equipes:Equipe[]= [];
   }
 
   onAddMembre(i:number, membre:Membre){
-    console.log(i)
-    console.log(this.equipes)
     this.equipes[i].membres.push(membre)
   }
 

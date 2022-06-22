@@ -27,7 +27,6 @@ export class AppComponent {
   }
 
   onAddMembre(){
-    console.log(this.equipeMembreIndex)
     let newMembre = new Membre(this.nomMembre, this.prenomMembre)
     this.service.onAddMembre(parseInt(this.equipeMembreIndex) ,newMembre)
 

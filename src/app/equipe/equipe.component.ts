@@ -14,4 +14,7 @@ export class EquipeComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  onDelete(index: number){
+    console.log("delete",index)
+  }
 }
